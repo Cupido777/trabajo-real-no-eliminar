@@ -1,7 +1,5 @@
-title: "ODAM - Producción Musical con Propósito"
-description: "Producción musical profesional, mezcla, masterización y consultoría técnica"
+title: "ODAM"
+description: "Producción musical profesional"
 baseurl: ""
 url: ""
 theme: null
-markdown: kramdown
-permalink: pretty
