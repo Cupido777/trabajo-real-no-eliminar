@@ -1238,3 +1238,97 @@ button:focus-visible {
     margin-top: 2px;
     flex-shrink: 0;
 }
+
+/* ===== ESTILOS PARA ACORDEÓN DE SERVICIOS ===== */
+
+.services-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-accordion-item {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.service-accordion-item:hover {
+    border-color: rgba(200, 162, 95, 0.3);
+}
+
+.service-accordion-header {
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-accordion-header:hover {
+    background: var(--hover-overlay);
+}
+
+.service-header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    flex: 1;
+}
+
+.service-header-text h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    font-size: 1.25rem;
+}
+
+.service-concept {
+    color: var(--gold-primary);
+    font-weight: var(--font-weight-semibold);
+    font-style: italic;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.accordion-arrow {
+    color: var(--gold-primary);
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.service-accordion-content {
+    padding: 0 var(--space-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+/* Estado activo del acordeón */
+.service-accordion-item.active .service-accordion-content {
+    padding: 0 var(--space-lg) var(--space-lg);
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.service-accordion-item.active .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+/* Estilos del contenido desplegado */
+.service-accordion-content p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+}
+
+.service-accordion-content .btn {
+    margin-top: var(--space-lg);
+    width: 100%;
+    justify-content: center;
+}
