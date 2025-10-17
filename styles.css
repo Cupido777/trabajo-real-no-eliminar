@@ -1437,3 +1437,28 @@ button:focus-visible {
     border-bottom: 1px solid transparent;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
+
+/* ===== FIX PARTICLES BACKGROUND PARA TODA LA PÁGINA ===== */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Asegurar que el contenido tenga fondo semi-transparente para legibilidad */
+.hero, .section, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mejorar legibilidad del texto sobre el fondo de partículas */
+.hero-text, .section-header, .service-accordion-content, 
+.project-content, .contact-card, .footer-content {
+    position: relative;
+    z-index: 2;
+}
