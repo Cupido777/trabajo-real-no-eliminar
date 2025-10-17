@@ -19,9 +19,52 @@
     <!-- Font Awesome 6.4.2 que SÍ incluye el icono de Threads -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales para la foto de fondo fija */
+        .fixed-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./tu-foto.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2; /* Detrás de las partículas y contenido */
+            opacity: 0.15; /* Ajusta la opacidad según prefieras */
+        }
+        
+        /* Ajustar el z-index de las partículas para que estén sobre la foto pero bajo el contenido */
+        #particles-js {
+            z-index: -1;
+        }
+        
+        /* Asegurar que el contenido tenga un fondo semi-transparente para mejor legibilidad */
+        .container, footer {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Ajustes específicos para mantener la legibilidad */
+        .hero-content, .section, .contact-content, .footer-content {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Eliminar la imagen de perfil del hero para evitar duplicación */
+        .profile-image {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- Particles Background - MODIFICADO PARA CUBRIR TODA LA PÁGINA -->
+    <!-- Foto de fondo fija para toda la página -->
+    <div class="fixed-background"></div>
+    
+    <!-- Particles Background -->
     <div id="particles-js"></div>
 
     <header role="banner">
@@ -77,7 +120,7 @@
                 <div class="hero-visual fade-in">
                     <div class="profile-card">
                         <div class="profile-image-container">
-                            <img src="./tu-foto.jpg" alt="Osklin De Alba - Productor Musical ODAM" class="profile-image">
+                            <!-- La imagen se ha eliminado para evitar duplicación con el fondo -->
                             <div class="profile-overlay">
                                 <div class="profile-badge">
                                     <i class="fas fa-music"></i>
@@ -232,7 +275,7 @@
                         <div class="service-ideal">
                             <strong>Ideal para:</strong> Artistas, marcas personales y empresas que necesitan visibilidad digital.
                         </div>
-                        <a class="btn btn-primary" href="https://wa.me/573142905621?text=Hola%20ODAM%2C%20estoy%20interesado%20en%20Desarrollo%20y%20Formación%20Digital." target="_blank" rel="noopener">
+                        <a class="btn btn-primary" href="https://wa.me/573142905621?text=Hola%20ODAM%2C%20estoy%20interesado%20en%20Desarrollo%20y%20Formaci%C3%B3n%20Digital." target="_blank" rel="noopener">
                             <i class="fab fa-whatsapp"></i> Solicitar este servicio
                         </a>
                     </div>
@@ -308,7 +351,8 @@
             </div>
             <div class="inspiration-content">
                 <blockquote class="inspiration-quote fade-in">
-                    "El temor del Señor es el principio de la sabiduría." — Proverbios
+                                El temor del Señor es el principio de la sabiduría.  
+                                Proverbios 1:7
                 </blockquote>
             </div>
         </section>
@@ -317,31 +361,4 @@
         <section id="contacto" class="section contact-section">
             <div class="section-header">
                 <h2 class="section-title">Inicia Tu Proyecto</h2>
-                <p class="section-subtitle">Hablemos sobre cómo podemos llevar tu música al siguiente nivel</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h3>WhatsApp Directo</h3>
-                        <p>Comunicación inmediata para consultas y cotizaciones</p>
-                        <a class="btn btn-primary" href="https://wa.me/573142905621?text=Hola%20ODAM%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios." target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-                        </a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Correo Electrónico</h3>
-                        <p>Para proyectos detallados y documentación</p>
-                        <a class="btn btn-gold" href="mailto:odeam@osklindealba.com">
-                            <i class="fas fa-paper-plane"></i> Enviar Email
-                        </a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div cla
+                <p class="section
