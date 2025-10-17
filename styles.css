@@ -1198,3 +1198,43 @@ button:focus-visible {
     position: relative;
     z-index: 2;
 }
+
+/* ===== ESTILOS PARA NUEVA ORGANIZACIÓN DE SERVICIOS ===== */
+
+.service-concept {
+    color: var(--gold-primary);
+    font-weight: var(--font-weight-semibold);
+    font-style: italic;
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+}
+
+.service-ideal {
+    background: rgba(200, 162, 95, 0.05);
+    border-left: 3px solid var(--gold-primary);
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+.service-ideal strong {
+    color: var(--gold-primary);
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.service-features li {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    line-height: 1.4;
+}
+
+.service-features i {
+    color: var(--gold-primary);
+    font-size: 0.8rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
