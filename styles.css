@@ -81,7 +81,21 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== PARTÍCULAS BACKGROUND ===== */
+/* ===== FONDO FIJO Y PARTÍCULAS ===== */
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./tu-foto.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  opacity: 0.15;
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -97,6 +111,8 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== HEADER PREMIUM ===== */
@@ -229,6 +245,11 @@ nav a:hover::after {
   gap: var(--space-xxl);
   align-items: center;
   width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
 }
 
 @media (min-width: 1024px) {
@@ -501,6 +522,11 @@ nav a:hover::after {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-light);
 }
 
 .section-title {
@@ -518,6 +544,15 @@ nav a:hover::after {
 }
 
 /* ===== SERVICIOS SECTION ===== */
+.services-section {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-light);
+  margin: var(--space-lg) 0;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -576,14 +611,14 @@ nav a:hover::after {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+    background: linear-gradient(135deg, var(--rich-gold), var(--vibrant-gold));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     font-size: 1.25rem;
-    color: var(--bg-primary);
+    color: var(--primary-black);
     flex-shrink: 0; /* Esto evita que se deforme */
 }
 
@@ -643,6 +678,15 @@ nav a:hover::after {
 }
 
 /* ===== PROYECTOS SECTION ===== */
+.projects-section {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-light);
+  margin: var(--space-lg) 0;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -809,6 +853,15 @@ nav a:hover::after {
 }
 
 /* ===== CONTACTO SECTION ===== */
+.contact-section {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-light);
+  margin: var(--space-lg) 0;
+}
+
 .contact-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -903,562 +956,4 @@ nav a:hover::after {
   border-color: transparent;
 }
 
-/* ===== FOOTER PREMIUM ===== */
-footer {
-  background: var(--deep-black);
-  border-top: 1px solid var(--border-light);
-  margin-top: var(--space-xxl);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
-  padding: var(--space-xxl) 0;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .footer-content {
-    grid-template-columns: 2fr 1fr 1fr;
-    text-align: left;
-  }
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .footer-brand {
-    justify-content: flex-start;
-  }
-}
-
-.footer-brand img {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--border-radius-sm);
-  border: 2px solid var(--border-gold);
-}
-
-.footer-brand h3 {
-  color: var(--rich-gold);
-  font-size: 1.5rem;
-  font-weight: var(--font-bold);
-  margin-bottom: var(--space-xs);
-}
-
-.footer-brand p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .footer-links {
-    align-items: flex-start;
-  }
-}
-
-.footer-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--rich-gold);
-}
-
-.footer-social {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .footer-social {
-    justify-content: flex-end;
-  }
-}
-
-.footer-social a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: var(--rich-gold);
-  transform: translateY(-2px);
-}
-
-.footer-bottom {
-  border-top: 1px solid var(--border-light);
-  padding: var(--space-lg) 0;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-/* ===== ANIMACIONES ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 767px) {
-  .header-inner {
-    padding: var(--space-xs) var(--space-sm);
-  }
-  
-  nav {
-    display: none;
-  }
-  
-  .hero {
-    padding: 120px 0 var(--space-xl);
-  }
-  
-  .actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .stats {
-    gap: var(--space-md);
-  }
-  
-  .stat-card {
-    min-width: 100px;
-    padding: var(--space-sm);
-  }
-  
-  .section {
-    padding: var(--space-xl) 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 var(--space-sm);
-  }
-  
-  .h-title {
-    font-size: 2rem;
-  }
-  
-  .hero-logo {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .service-card,
-  .project-card,
-  .consultancy-card,
-  .contact-card {
-    padding: var(--space-lg);
-  }
-}
-
-/* ===== ACCESIBILIDAD ===== */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus styles */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--rich-gold);
-  outline-offset: 2px;
-}
-
-/* High contrast support */
-@media (prefers-contrast: high) {
-  :root {
-    --primary-black: #000000;
-    --text-primary: #ffffff;
-    --rich-gold: #ffd700;
-  }
-}
-
-/* Print styles */
-@media print {
-  .hero-visual,
-  .social-links,
-  .cta {
-    display: none;
-  }
-}
-
-/* ===== PERFIL CON FOTO - NUEVOS ESTILOS ===== */
-.profile-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border-light);
-    border-radius: var(--border-radius-lg);
-    padding: var(--space-lg);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.profile-image-container {
-    position: relative;
-    margin-bottom: var(--space-md);
-}
-
-.profile-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--border-gold);
-    box-shadow: var(--shadow-gold);
-    display: block;
-    margin: 0 auto;
-}
-
-.profile-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(200, 162, 95, 0.1), transparent);
-    border-radius: 50%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: var(--space-sm);
-}
-
-.profile-badge {
-    background: linear-gradient(135deg, var(--rich-gold), var(--vibrant-gold));
-    color: var(--primary-black);
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--border-radius);
-    font-size: 0.8rem;
-    font-weight: var(--font-bold);
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-}
-
-.profile-info h3 {
-    color: var(--text-primary);
-    font-size: 1.4rem;
-    font-weight: var(--font-semibold);
-    margin-bottom: var(--space-xs);
-}
-
-.profile-info p {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-md);
-    font-size: 0.9rem;
-}
-
-.profile-stats {
-    display: flex;
-    gap: var(--space-md);
-    justify-content: center;
-}
-
-.profile-stats span {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
-.profile-stats strong {
-    color: var(--rich-gold);
-    display: block;
-    font-size: 1.1rem;
-}
-
-/* ===== FONDO CON FOTO DETRÁS DEL HERO ===== */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('tu-fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* ===== ESTILOS PARA NUEVA ORGANIZACIÓN DE SERVICIOS ===== */
-
-.service-concept {
-    color: var(--gold-primary);
-    font-weight: var(--font-weight-semibold);
-    font-style: italic;
-    margin-bottom: var(--space-md);
-    font-size: 0.95rem;
-}
-
-.service-ideal {
-    background: rgba(200, 162, 95, 0.05);
-    border-left: 3px solid var(--gold-primary);
-    padding: var(--space-md);
-    margin-top: var(--space-lg);
-    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
-}
-
-.service-ideal strong {
-    color: var(--gold-primary);
-    display: block;
-    margin-bottom: var(--space-xs);
-}
-
-.service-features li {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-sm);
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-    line-height: 1.4;
-}
-
-.service-features i {
-    color: var(--gold-primary);
-    font-size: 0.8rem;
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-/* ===== ESTILOS PARA ACORDEÓN DE SERVICIOS ===== */
-
-.services-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.service-accordion-item {
-    background: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.service-accordion-item:hover {
-    border-color: rgba(200, 162, 95, 0.3);
-}
-
-.service-accordion-header {
-    padding: var(--space-lg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.service-accordion-header:hover {
-    background: var(--hover-overlay);
-}
-
-.service-header-content {
-    display: flex;
-    align-items: center;
-    gap: var(--space-lg);
-    flex: 1;
-}
-
-.service-header-text h3 {
-    color: var(--text-primary);
-    margin-bottom: var(--space-xs);
-    font-size: 1.25rem;
-}
-
-.service-concept {
-    color: var(--gold-primary);
-    font-weight: var(--font-weight-semibold);
-    font-style: italic;
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-.accordion-arrow {
-    color: var(--gold-primary);
-    transition: transform 0.3s ease;
-    font-size: 1.1rem;
-}
-
-.service-accordion-content {
-    padding: 0 var(--space-lg);
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-/* Estado activo del acordeón */
-.service-accordion-item.active .service-accordion-content {
-    padding: 0 var(--space-lg) var(--space-lg);
-    max-height: 1000px;
-    opacity: 1;
-}
-
-.service-accordion-item.active .accordion-arrow {
-    transform: rotate(180deg);
-}
-
-/* Estilos del contenido desplegado */
-.service-accordion-content p {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-lg);
-    line-height: 1.6;
-}
-
-.service-accordion-content .btn {
-    margin-top: var(--space-lg);
-    width: 100%;
-    justify-content: center;
-}
-
-/* Todo tu CSS actual... */
-/* ... */
-/* ... */
-
-/* ===== EFECTO LUJO PARA ACORDEÓN DE SERVICIOS ===== */
-
-.service-accordion-header {
-    padding: var(--space-lg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, 
-        rgba(200, 162, 95, 0.05) 0%, 
-        rgba(200, 162, 95, 0.02) 50%,
-        rgba(200, 162, 95, 0.05) 100%);
-    border: 1px solid rgba(200, 162, 95, 0.1);
-    border-radius: var(--border-radius);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-accordion-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(200, 162, 95, 0.1), 
-        transparent);
-    transition: left 0.6s ease;
-}
-
-.service-accordion-header:hover::before {
-    left: 100%;
-}
-
-.service-accordion-header:hover {
-    background: linear-gradient(135deg, 
-        rgba(200, 162, 95, 0.08) 0%, 
-        rgba(200, 162, 95, 0.04) 50%,
-        rgba(200, 162, 95, 0.08) 100%);
-    border-color: rgba(200, 162, 95, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(200, 162, 95, 0.15);
-}
-
-.service-accordion-item {
-    background: transparent;
-    border: none;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    margin-bottom: var(--space-md);
-}
-
-.service-accordion-content {
-    background: var(--panel-bg);
-    border: 1px solid rgba(200, 162, 95, 0.1);
-    border-top: none;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-    margin-top: -1px;
-}
-
-/* Estado activo mantiene el efecto de lujo */
-.service-accordion-item.active .service-accordion-header {
-    background: linear-gradient(135deg, 
-        rgba(200, 162, 95, 0.1) 0%, 
-        rgba(200, 162, 95, 0.05) 50%,
-        rgba(200, 162, 95, 0.1) 100%);
-    border-color: rgba(200, 162, 95, 0.4);
-    border-bottom: 1px solid transparent;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-/* ===== FIX PARTICLES BACKGROUND PARA TODA LA PÁGINA ===== */
-
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Asegurar que el contenido tenga fondo semi-transparente para legibilidad */
-.hero, .section, footer {
-    position: relative;
-    z-index: 1;
-}
-
-/* Mejorar legibilidad del texto sobre el fondo de partículas */
-.hero-text, .section-header, .service-accordion-content, 
-.project-content, .contact-card, .footer-content {
-    position: relative;
-    z-index: 2;
-}
+/* ===== FOOTER PRE
