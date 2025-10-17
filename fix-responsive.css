@@ -1,0 +1,28 @@
+/* FIX RESPONSIVE - CORRECCIONES MÍNIMAS */
+/* Agregar este archivo DESPUÉS de styles.css en el HTML */
+
+/* 1. Fix para Studio Quality y elementos cortados */
+.visual-tag {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    max-width: 200px !important;
+    overflow: visible !important;
+}
+
+/* 2. Fix para proyectos destacados */
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+/* 3. Fix general para elementos ocultos */
+.container {
+    overflow: visible !important;
+}
+
+.profile-card,
+.project-card,
+.service-card {
+    overflow: visible !important;
+}
