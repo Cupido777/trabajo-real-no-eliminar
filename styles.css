@@ -1,6 +1,4 @@
-/* styles.css — ODAM (refinado) */
-/* Tip: mantén logo.jpg, tu-fondo.jpg y tu-foto.jpg en la raíz */
-
+/* styles.css — ODAM (refinado final con mejoras) */
 /* ================ VARIABLES ================ */
 :root{
   --primary-black:#000000;
@@ -24,7 +22,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 
-/* Fondo aplicado al body en toda la web */
+/* 1️⃣ Fondo fijo en todo el sitio */
 body{
   font-family:var(--font-family);
   background: var(--primary-black) url('tu-fondo.jpg') center center / cover no-repeat fixed;
@@ -35,8 +33,6 @@ body{
   overflow-x:hidden;
   position: relative;
 }
-
-/* Capa oscura fija para legibilidad */
 body::before {
   content: "";
   position: fixed;
@@ -45,12 +41,8 @@ body::before {
   z-index: -1;
 }
 
-/* Particles container (z-index -1) */
+/* Particles container */
 #particles-js{position:fixed;inset:0;z-index:-2}
-
-/* ================ LAYOUT ================ */
-.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md)}
-.section{padding:var(--space-xl) 0;position:relative}
 
 /* ================ HEADER ================ */
 header.site-header{
@@ -62,13 +54,9 @@ header.site-header{
 header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rgba(0,0,0,.6)}
 
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-
-/* Brand */
 .brand{display:flex;align-items:center;gap:12px;color:var(--text-primary);text-decoration:none}
 .brand img{width:52px;height:52px;border-radius:8px;border:2px solid var(--border-gold);object-fit:cover}
 .brand h1{color:var(--rich-gold);font-size:1.2rem;font-weight:700;letter-spacing:.6px;margin:0}
-
-/* Navigation */
 .main-nav{display:flex;align-items:center;gap:20px}
 .nav-list{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
 .nav-list a{color:var(--text-secondary);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600;font-size:.95rem}
@@ -76,7 +64,7 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
 .cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;padding:8px 14px;border-radius:12px;font-weight:700;text-decoration:none}
 .nav-toggle{display:none;background:transparent;border:none;color:var(--text-secondary);font-size:1.2rem}
 
-/* ================ HERO ================ */
+/* HERO */
 .hero{min-height:88vh;display:flex;align-items:center;padding:110px 0 60px;position:relative}
 .hero-content{display:grid;gap:48px;width:100%;align-items:center;grid-template-columns:1fr}
 @media(min-width:1024px){.hero-content{grid-template-columns:1fr 420px}}
@@ -87,39 +75,15 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
 .highlight{background:linear-gradient(90deg,var(--rich-gold),var(--light-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .h-sub{max-width:700px;color:var(--text-secondary);font-size:1.05rem;margin-bottom:20px}
 
-/* ACTIONS */
+/* BUTTONS */
 .actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn-primary{background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;box-shadow:0 8px 30px rgba(200,162,95,0.12)}
 .btn-secondary{background:transparent;color:var(--rich-gold);border:2px solid var(--border-gold)}
 .btn-outline{background:transparent;color:var(--rich-gold);border:2px solid var(--border-gold)}
 
-/* STATS */
-.stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
-.stat-card{text-align:center}
-.stat-number{color:var(--rich-gold);font-size:1.8rem;font-weight:800}
-.stat-label{color:var(--text-muted);font-weight:600;font-size:.9rem}
-
-/* PROFILE CARD (visual) */
-.profile-card{background:var(--card-bg);backdrop-filter:blur(8px);border:1px solid var(--border-light);border-radius:18px;padding:22px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.6)}
-.profile-image{width:240px;height:240px;border-radius:50%;object-fit:cover;border:3px solid var(--border-gold);box-shadow:0 8px 30px rgba(200,162,95,.12)}
-.profile-overlay{position:relative;margin-top:-48px}
-.profile-badge{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border-radius:12px;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;font-weight:700}
-
-/* PROJECTS / SERVICES / CARDS */
-.projects-grid, .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.project-card, .service-card, .contact-card{background:var(--card-bg);border:1px solid var(--border-light);border-radius:14px;padding:20px;transition:transform .3s ease,box-shadow .3s ease}
-.project-card:hover, .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.6);border-color:var(--border-gold)}
-.project-image{height:180px;background:linear-gradient(135deg,var(--deep-black),var(--primary-black));border-radius:8px;margin-bottom:14px;position:relative;overflow:hidden}
-.project-badge{position:absolute;left:14px;top:14px;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));padding:6px 10px;border-radius:8px;color:#000;font-weight:700}
-
-/* Service accordion (clean) */
-.services-accordion{display:flex;flex-direction:column;gap:16px}
-.service-accordion-header{display:flex;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(200,162,95,0.03),transparent);border:1px solid rgba(200,162,95,0.06);cursor:pointer}
-.service-header-content{display:flex;gap:14px;align-items:center}
+/* 2️⃣ Icono Consultoría personalizado */
 .service-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;font-size:1.2rem}
-
-/* Personalización de icono de Consultoría */
 .service-icon.custom-icon {
   background: var(--text-primary);
   padding: 8px;
@@ -130,41 +94,39 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
   height: auto;
 }
 
-.service-header-text h3{color:var(--text-primary);margin:0;font-size:1.05rem}
-.service-concept{color:var(--text-muted);font-size:.95rem;margin:0}
+/* 4️⃣ Redes sociales con colores distintivos */
+.footer-social a,
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+.footer-social a:hover,
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+.social-link[aria-label="Facebook"],
+.footer-social a[aria-label="Facebook"] {
+  background-color: #1877f2;
+}
+.social-link[aria-label="TikTok"],
+.footer-social a[aria-label="TikTok"] {
+  background-color: #000;
+}
+.social-link[aria-label="Threads"],
+.footer-social a[aria-label="Threads"] {
+  background-color: #000;
+}
+.social-link[aria-label="Instagram"],
+.footer-social a[aria-label="Instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
 
-/* accordion content */
-.service-accordion-content{padding:0 18px 18px;display:none}
-.service-accordion-item.active .service-accordion-content{display:block}
-
-/* CONTACT */
-.contact-info{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.contact-icon{width:66px;height:66px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;margin:0 auto 12px;font-size:1.4rem}
-
-/* FOOTER */
+/* Footer */
 footer{margin-top:40px;color:var(--text-muted);border-top:1px solid var(--border-light);background:transparent}
-.footer-content{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 0}
-@media(min-width:768px){.footer-content{grid-template-columns:2fr 1fr 1fr}}
-.footer-brand img{width:50px;height:50px;border-radius:8px;border:2px solid var(--border-gold)}
-.footer-links a{display:block;color:var(--text-secondary);text-decoration:none;margin-bottom:6px}
-
-/* ANIMATIONS & REDUCED MOTION */
-.fade-in{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.2,.8,.2,1)}
-.fade-in.show{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-
-/* RESPONSIVE tweaks */
-@media(max-width:900px){
-  .header-inner{padding:10px 0}
-  .nav-list{display:none}
-  .nav-toggle{display:inline-block}
-  .hero{padding:100px 0}
-}
-@media(max-width:480px){
-  .h-title{font-size:1.8rem}
-  .profile-image{width:160px;height:160px}
-  .cta-text{display:none}
-}
-
-/* utility */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
