@@ -23,24 +23,30 @@
 /* ================ RESET ================ */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body {
-  font-family: var(--font-family);
+
+/* Fondo aplicado al body en toda la web */
+body{
+  font-family:var(--font-family);
   background: var(--primary-black) url('tu-fondo.jpg') center center / cover no-repeat fixed;
-  color: var(--text-secondary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  overflow-x: hidden;
+  color:var(--text-secondary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  overflow-x:hidden;
   position: relative;
 }
 
+/* Capa oscura fija para legibilidad */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8); /* capa oscura encima */
+  background: rgba(0, 0, 0, 0.8);
   z-index: -1;
 }
+
+/* Particles container (z-index -1) */
+#particles-js{position:fixed;inset:0;z-index:-2}
 
 /* ================ LAYOUT ================ */
 .container{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md)}
@@ -112,6 +118,18 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
 .service-accordion-header{display:flex;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(200,162,95,0.03),transparent);border:1px solid rgba(200,162,95,0.06);cursor:pointer}
 .service-header-content{display:flex;gap:14px;align-items:center}
 .service-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;font-size:1.2rem}
+
+/* Personalización de icono de Consultoría */
+.service-icon.custom-icon {
+  background: var(--text-primary);
+  padding: 8px;
+}
+.service-icon.custom-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .service-header-text h3{color:var(--text-primary);margin:0;font-size:1.05rem}
 .service-concept{color:var(--text-muted);font-size:.95rem;margin:0}
 
@@ -124,7 +142,7 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
 .contact-icon{width:66px;height:66px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--rich-gold),var(--vibrant-gold));color:#000;margin:0 auto 12px;font-size:1.4rem}
 
 /* FOOTER */
-footer{margin-top:40px;color:var(--text-muted);border-top:1px solid var(--border-light;background:transparent)}
+footer{margin-top:40px;color:var(--text-muted);border-top:1px solid var(--border-light);background:transparent}
 .footer-content{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 0}
 @media(min-width:768px){.footer-content{grid-template-columns:2fr 1fr 1fr}}
 .footer-brand img{width:50px;height:50px;border-radius:8px;border:2px solid var(--border-gold)}
