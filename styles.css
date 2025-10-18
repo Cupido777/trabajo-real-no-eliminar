@@ -23,27 +23,23 @@
 /* ================ RESET ================ */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:var(--font-family);
-  background:linear-gradient(180deg,var(--primary-black),var(--deep-black));
-  color:var(--text-secondary);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.6;
-  overflow-x:hidden;
+body {
+  font-family: var(--font-family);
+  background: var(--primary-black) url('tu-fondo.jpg') center center / cover no-repeat fixed;
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* Particles container (z-index -1) */
-#particles-js{position:fixed;inset:0;z-index:-2}
-
-/* hero background image (subtle) */
-.hero::before{
-  content:"";
-  position:absolute;inset:0;
-  background-image:url('tu-fondo.jpg');
-  background-size:cover;background-position:center;
-  opacity:0.12;pointer-events:none;z-index:-1;
-  filter:grayscale(20%) contrast(90%);
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* capa oscura encima */
+  z-index: -1;
 }
 
 /* ================ LAYOUT ================ */
