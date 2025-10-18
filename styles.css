@@ -130,3 +130,28 @@ header.site-header.scrolled{background:rgba(0,0,0,0.85);box-shadow:0 8px 30px rg
 
 /* Footer */
 footer{margin-top:40px;color:var(--text-muted);border-top:1px solid var(--border-light);background:transparent}
+
+/* Redes sociales con color, sin botones redondos */
+.footer-social a {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-right: 14px;
+  transition: transform 0.3s ease;
+}
+.footer-social a:hover {
+  transform: translateY(-3px);
+}
+.footer-social a.facebook {
+  color: #1877f2;
+}
+.footer-social a.tiktok {
+  color: #000;
+}
+.footer-social a.threads {
+  color: #000;
+}
+.footer-social a.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
